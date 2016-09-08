@@ -1,0 +1,17 @@
+sudo: required
+language: generic
+
+services:
+- docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.8
+
+before_script:
+  - gem install awesome_bot
+
+script:
+  - awesome_bot README.md --allow-redirect
+  - docker build --tag loadbalancing-verification-service --tag loadbalancing-verification-service:latest --tag loadbalancing-verification-service:$(date "+%d-%m-%Y_%H-%M-%S") .'
+  - docker login --username ${REGISTRY_USERNAME} --password ${REGISTRY_PASSWORD}
+  - docker push loadbalancing-verification-service
