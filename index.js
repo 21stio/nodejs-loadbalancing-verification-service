@@ -4,7 +4,7 @@ const pick = require('random-pick');
 
 function requireStringEnvironmentVariable(name) {
     if (process.env[name] == null) {
-        throw Error("Environment variable " + name + " not set!")
+        throw Error("Environment variable " + name + " not set")
     }
 
     return process.env[name]
@@ -12,7 +12,7 @@ function requireStringEnvironmentVariable(name) {
 
 function requireIntegerEnvironmentVariable(name) {
     if (process.env[name] == null) {
-        throw Error("Environment variable " + name + " not set!")
+        throw Error("Environment variable " + name + " not set")
     }
 
     return parseInt(process.env[name]);
