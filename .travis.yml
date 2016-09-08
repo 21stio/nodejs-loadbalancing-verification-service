@@ -5,6 +5,6 @@ services:
 - docker
 
 script:
-  - docker build --tag nodejs-loadbalancing-verification-service --tag nodejs-loadbalancing-verification-service:latest --tag nodejs-loadbalancing-verification-service:$(date "+%d-%m-%Y_%H-%M-%S") .
+  - docker build --tag 21stio/nodejs-loadbalancing-verification-service --tag 21stio/nodejs-loadbalancing-verification-service:latest --tag 21stio/nodejs-loadbalancing-verification-service:$(date "+%d-%m-%Y_%H-%M-%S") .
   - docker login --username ${REGISTRY_USERNAME} --password ${REGISTRY_PASSWORD}
-  - docker push nodejs-loadbalancing-verification-service
+  - docker push 21stio/nodejs-loadbalancing-verification-service
