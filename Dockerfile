@@ -12,4 +12,4 @@ RUN npm install
 
 COPY ./index.js ./index.js
 
-CMD pm2 start --no-daemon ./index.js
+CMD node ./index.js
